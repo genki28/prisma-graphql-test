@@ -8,7 +8,7 @@
     "migrate": "npx prisma migrate dev --name init --preview-feature",
     "generate": "npx prisma generate",
     "codegen": "graphql-codegen --config codegen.yml",
-    "start": "ts-node-dev ./src/index.ts --poll"
+    "start": "ts-node-dev --poll ./src/index.ts"
   },
   "keywords": [],
   "author": "",
