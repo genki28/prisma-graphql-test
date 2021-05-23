@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "migrate": "npx prisma migrate dev --name init --preview-feature",
+    "migrate": "DATABASE_URL=file:./dev.db npx prisma migrate dev --name init --preview-feature",
+    "seed": "DATABASE_URL=file:./dev.db npx prisma db seed --preview-feature",
     "generate": "npx prisma generate",
     "codegen": "graphql-codegen --config codegen.yml",
-    "start": "ts-node-dev --poll ./src/index.ts",
-    "seed": "npx prisma db seed --preview-feature"
+    "start": "cross-env NODE_ENV=local ts-node-dev --poll ./src/index.ts",
+    "test": "cross-env NODE_ENV=testing jest",
+    "test-migrate": "DATABASE_URL=file:./test.db npx prisma migrate dev --name init --preview-feature",
+    "test-seed": "DATABASE_URL=file:./test.db npx prisma db seed --preview-feature",
+    "test-generate": "npx prisma generate",
+    "test-reset": "rm ./prisma/test.db"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +25,7 @@
     "@graphql-codegen/typescript-resolvers": "1.19.1",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.3.1",
+    "apollo-server-testing": "^2.24.1",
     "prisma": "^2.23.0",
     "ts-jest": "^26.5.6",
     "typescript": "^4.2.4"
@@ -28,10 +33,12 @@
   "dependencies": {
     "@prisma/client": "^2.23.0",
     "apollo-server-express": "^2.24.1",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
     "graphql-codegen": "^0.4.0",
     "jest": "^26.6.3",
+    "path": "^0.12.7",
     "ts-node-dev": "^1.1.6"
   }
 }
