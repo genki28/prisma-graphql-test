@@ -20,7 +20,7 @@ export const schema = gql`
 
   type User {
     id:      Int
-    emai:    String
+    email:   String
     name:    String
     posts:   [Post]
     profile: Profile

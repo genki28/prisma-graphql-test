@@ -11,4 +11,7 @@ module.exports = {
   },
   "preset": "ts-jest",
   // "testEnvironment": "./prisma/prisma-test-environment.js"
+  "setupFilesAfterEnv": [
+    `${process.cwd()}/jest.setup.js`
+  ]
 }

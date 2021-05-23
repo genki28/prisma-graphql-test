@@ -9,11 +9,11 @@
     "generate": "npx prisma generate",
     "codegen": "graphql-codegen --config codegen.yml",
     "start": "cross-env NODE_ENV=local ts-node-dev --poll ./src/index.ts",
-    "test": "cross-env NODE_ENV=testing jest",
-    "test-migrate": "DATABASE_URL=file:./test.db npx prisma migrate dev --name init --preview-feature",
-    "test-seed": "DATABASE_URL=file:./test.db npx prisma db seed --preview-feature",
-    "test-generate": "npx prisma generate",
-    "test-reset": "rm ./prisma/test.db"
+    "test": "cross-env NODE_ENV=testing jest --forceExit",
+    "test-migrate": "DATABASE_URL=file:./testing.db npx prisma migrate dev --name init --preview-feature",
+    "test-generate": "DATABASE_URL=file:./testing.db npx prisma generate",
+    "test-seed": "DATABASE_URL=file:./testing.db npx prisma db seed --preview-feature",
+    "test-reset": "rm ./prisma/testing.db"
   },
   "keywords": [],
   "author": "",

@@ -46,7 +46,7 @@ export type QueryUserArgs = {
 export type User = {
   __typename?: 'User';
   id?: Maybe<Scalars['Int']>;
-  emai?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   posts?: Maybe<Array<Maybe<Post>>>;
   profile?: Maybe<Profile>;
@@ -176,7 +176,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 
 export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
   id?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  emai?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  email?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   posts?: Resolver<Maybe<Array<Maybe<ResolversTypes['Post']>>>, ParentType, ContextType>;
   profile?: Resolver<Maybe<ResolversTypes['Profile']>, ParentType, ContextType>;

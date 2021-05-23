@@ -260,7 +260,7 @@
             "deprecationReason": null
           },
           {
-            "name": "emai",
+            "name": "email",
             "description": null,
             "args": [],
             "type": {
